@@ -1,0 +1,38 @@
+<!-- Cart with product -->
+<section class="py-5">
+    <div class="container px-4 px-lg-5 mt-5">
+        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+            <div class="col mb-5" *ngFor=" let wish of allWishlist">
+                <div class="card shadow p-4">
+                    <!-- Product image-->
+                    <img class="card-img-top" [src]="wish.image" alt="..." />
+                    <!-- Product details-->
+                    <div class="card-body p-4">
+                        <div class="text-center">
+                            <!-- Product name-->
+                            <h5 class="fw-bolder">{{wish.title}}</h5>
+                            <!-- Product price-->
+                            ${{wish.price}}
+                        </div>
+                    </div>
+                    <!-- Product actions-->
+                    <div class="card-footer d-flex justify-content-space-between p-4 pt-0 border-top-0 bg-transparent">
+                        <div class="text-center"><a class=" me-5 btn btn-outline-dark mt-auto" routerLink="view-products/:id"><i class=" fa-solid fa-cart-shopping"></i></a></div>
+                        <div class="text-center"><a (click)="deleteWishlistItem(wish.id)" class=" ms-5 btn btn-outline-dark mt-auto"><i class=" fa-solid fa-trash"></i></a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+       
+    </div>
+</section>
+
+<!-- Empty wishlist -->
+<div class="container text-center p-5 " *ngIf="allWishlist.length==0">
+    <h1>Your Wishlist was Empty....👀👀</h1>
+    <img src="https://t3.ftcdn.net/jpg/05/28/57/56/360_F_528575618_WhwcM3Wc9pW7R0kfFlh42OFkgcheEHoK.jpg" alt="">
+    <div>
+        <button class="btn btn-dark">Shop More</button>
+    </div>
+</div>

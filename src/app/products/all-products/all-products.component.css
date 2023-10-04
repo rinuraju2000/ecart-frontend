@@ -1,0 +1,23 @@
+.banner{
+    background-image: url('https://png.pngtree.com/background/20210714/original/pngtree-black-friday-discount-web-banner-template-and-background-design-picture-image_1231686.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 600px;
+    width: 100%;
+}
+
+.card{
+    width:250px;
+    height:500px;
+    margin:10px;
+    padding: 30px;
+}
+.card-img-top{
+    width: 100%;
+    height: 200px;
+    transition: 2s;
+}
+.card-img-top:hover{
+    transform: scale(1.1);
+    transition: 2s;
+}
